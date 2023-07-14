@@ -22,9 +22,35 @@ class UserListTable: UITableViewController {
         return userList.randomElement()
     }
     
+    func presentRandomUserAlert(randomUser: User) {
+        let message = "Randomly selected user:\n\(randomUser.name)"
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+    
+        let dismissAction = UIAlertAction(title: "Dismiss", style: .default, handler: nil)
+    
+        alert.addAction(dismissAction)
+    
+        present(alert, animated: true)
+    }
+    
+    func presentRandomUserFailedAlert() {
+        let title = "Unable to Select Random User"
+        let message = "Please add users to the list."
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    
+        let dismissAction = UIAlertAction(title: "Dismiss", style: .default, handler: nil)
+    
+        alert.addAction(dismissAction)
+    
+        present(alert, animated: true)
+    }
+    
     @IBAction func selectRandomUserButtonPressed(_ sender: Any) {
-        guard let randomUser = selectRandomUser() else { return }
-        print("Selected user: \(randomUser.name).")
+        guard let randomUser = selectRandomUser() else {
+            presentRandomUserFailedAlert()
+            return
+        }
+        presentRandomUserAlert(randomUser: randomUser)
     }
     
     // MARK: - Table view data source
@@ -53,13 +79,12 @@ class UserListTable: UITableViewController {
         return cell
     }
     
+    //Navigation
     @IBAction func unwindFromCreateUserView(segue: UIStoryboardSegue) {
         guard segue.identifier == "Add User Unwind" else { return }
         let sourceViewController = segue.source as! CreateUserView
     
         guard let user = sourceViewController.user else { return }
-            
-        let newIndex = IndexPath(row: userList.count, section: 0)
         userList.append(user)
         
         tableView.reloadData()
