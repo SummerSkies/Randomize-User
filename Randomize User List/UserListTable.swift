@@ -60,15 +60,7 @@ class UserListTable: UITableViewController {
         guard let user = sourceViewController.user else { return }
             
         let newIndex = IndexPath(row: userList.count, section: 0)
-        
-        guard userList.isNotEmpty() else {
-            userList.append(user)
-            tableView.reloadData()
-            return
-        }
-        
         userList.append(user)
-        tableView.insertRows(at: [newIndex], with: .automatic)
         
         tableView.reloadData()
     }
