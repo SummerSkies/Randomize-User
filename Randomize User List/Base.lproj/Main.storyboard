@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -71,7 +72,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ai5-lZ-dLL">
                             <connections>
-                                <action selector="addUserButtonTapped:" destination="oQj-5b-ApE" id="CoC-At-dXd"/>
+                                <segue destination="cHC-Ma-PbB" kind="show" id="BhV-EL-1kn"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -84,6 +85,52 @@
                 </button>
             </objects>
             <point key="canvasLocation" x="805.3435114503817" y="-80.281690140845072"/>
+        </scene>
+        <!--Create New User-->
+        <scene sceneID="fgy-gs-mEl">
+            <objects>
+                <viewController id="cHC-Ma-PbB" customClass="CreateUserView" customModule="Randomize_User_List" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rBZ-zq-T5j">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a user name..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kt4-X5-5Xk">
+                                <rect key="frame" x="20" y="123" width="353" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="QZT-qC-gLw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f2s-Pa-chl">
+                                <rect key="frame" x="141" y="186" width="111" height="50.333333333333343"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Add User" buttonSize="large"/>
+                                <connections>
+                                    <segue destination="bZa-c8-jEg" kind="unwind" identifier="Add User Unwind" unwindAction="unwindFromCreateUserViewWithSegue:" id="vmE-BP-fYc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="S9x-M0-9XB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Kt4-X5-5Xk" firstAttribute="top" secondItem="S9x-M0-9XB" secondAttribute="top" constant="20" id="Afz-q7-bC4"/>
+                            <constraint firstItem="Kt4-X5-5Xk" firstAttribute="leading" secondItem="S9x-M0-9XB" secondAttribute="leading" constant="20" id="GEv-MG-whu"/>
+                            <constraint firstItem="S9x-M0-9XB" firstAttribute="trailing" secondItem="Kt4-X5-5Xk" secondAttribute="trailing" constant="20" id="L3N-DB-nSA"/>
+                            <constraint firstItem="f2s-Pa-chl" firstAttribute="top" secondItem="Kt4-X5-5Xk" secondAttribute="bottom" constant="23" id="Yc3-2w-n9A"/>
+                            <constraint firstItem="f2s-Pa-chl" firstAttribute="centerX" secondItem="rBZ-zq-T5j" secondAttribute="centerX" id="yZG-Ih-y8b"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Create New User" id="NFA-ia-xqe"/>
+                    <connections>
+                        <outlet property="addUserButton" destination="f2s-Pa-chl" id="udu-TX-Jcy"/>
+                        <outlet property="userNameTextField" destination="Kt4-X5-5Xk" id="UXL-Yq-fJ5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AJl-dE-46D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="bZa-c8-jEg" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1541" y="-80"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rHV-Fa-LHl">

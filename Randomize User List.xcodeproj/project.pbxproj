@@ -17,6 +17,7 @@
 		864410C12A618A23005A2840 /* Randomize_User_ListUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864410C02A618A23005A2840 /* Randomize_User_ListUITestsLaunchTests.swift */; };
 		864410CF2A618BD5005A2840 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864410CE2A618BD1005A2840 /* User.swift */; };
 		864410D12A618C0E005A2840 /* UserListTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864410D02A618C08005A2840 /* UserListTable.swift */; };
+		864410D72A61967A005A2840 /* CreateUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864410D62A61967A005A2840 /* CreateUserView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		864410C02A618A23005A2840 /* Randomize_User_ListUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Randomize_User_ListUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		864410CE2A618BD1005A2840 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		864410D02A618C08005A2840 /* UserListTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListTable.swift; sourceTree = "<group>"; };
+		864410D62A61967A005A2840 /* CreateUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				8644109F2A618A22005A2840 /* SceneDelegate.swift */,
 				864410CE2A618BD1005A2840 /* User.swift */,
 				864410D02A618C08005A2840 /* UserListTable.swift */,
+				864410D62A61967A005A2840 /* CreateUserView.swift */,
 				864410A32A618A22005A2840 /* Main.storyboard */,
 				864410A62A618A23005A2840 /* Assets.xcassets */,
 				864410A82A618A23005A2840 /* LaunchScreen.storyboard */,
@@ -262,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				864410CF2A618BD5005A2840 /* User.swift in Sources */,
+				864410D72A61967A005A2840 /* CreateUserView.swift in Sources */,
 				864410D12A618C0E005A2840 /* UserListTable.swift in Sources */,
 				8644109E2A618A22005A2840 /* AppDelegate.swift in Sources */,
 				864410A02A618A22005A2840 /* SceneDelegate.swift in Sources */,

@@ -16,3 +16,9 @@ extension Array {
         !self.isEmpty
     }
 }
+
+extension String {
+    func isNotEmpty() -> Bool {
+        !self.isEmpty
+    }
+}

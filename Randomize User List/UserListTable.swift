@@ -53,11 +53,23 @@ class UserListTable: UITableViewController {
         return cell
     }
     
-    //Add User
+    @IBAction func unwindFromCreateUserView(segue: UIStoryboardSegue) {
+        guard segue.identifier == "Add User Unwind" else { return }
+        let sourceViewController = segue.source as! CreateUserView
     
-    @IBAction func addUserButtonTapped(_ sender: Any) {
-        print("+ tapped")
-        userList.append(User(name: "Annarylis"))
+        guard let user = sourceViewController.user else { return }
+            
+        let newIndex = IndexPath(row: userList.count, section: 0)
+        
+        guard userList.isNotEmpty() else {
+            userList.append(user)
+            tableView.reloadData()
+            return
+        }
+        
+        userList.append(user)
+        tableView.insertRows(at: [newIndex], with: .automatic)
+        
         tableView.reloadData()
     }
 }
